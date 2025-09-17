@@ -17,7 +17,7 @@ spec:
 
   # Make FA wait on Postgres
   dependsOn:
-    - name: postgres
+    - name: postgresql
       namespace: fusionauth
 
   chart:
