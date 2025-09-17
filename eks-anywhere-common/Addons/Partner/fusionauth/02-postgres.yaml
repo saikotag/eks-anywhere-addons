@@ -7,11 +7,11 @@ spec:
   interval: 10m
   timeout: 15m0s
   install:
-    timeout: 15m0s
+    timeout: 35m0s
     remediation:
       retries: 3
   upgrade:
-    timeout: 15m0s
+    timeout: 35m0s
     remediation:
       retries: 3
   chart:
