@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: postgresql
+  namespace: default # Or your desired namespace for PostgreSQL
+spec:
+  interval: 5m # How often to reconcile the release
+  chart:
+    spec:
+      chart: postgresql
+      version: "16.7.27" # Specify a desired version (e.g., "16.7.27")
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami-sai
+        namespace: flux-system # Must match the HelmRepository namespace
+  values:
+    # Customize PostgreSQL settings here, for example:
+    # auth:
+    #   postgresPassword: "your-strong-password"
+    # persistence:
+    #   enabled: true
+    #   size: 8Gi
+    #   storageClass: "your-storage-class"
