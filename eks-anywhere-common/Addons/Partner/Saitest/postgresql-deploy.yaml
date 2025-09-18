@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: postgresql
-  namespace: default # Or your desired namespace for PostgreSQL
+  namespace: saitest # Or your desired namespace for PostgreSQL
 spec:
   interval: 5m # How often to reconcile the release
   chart:
