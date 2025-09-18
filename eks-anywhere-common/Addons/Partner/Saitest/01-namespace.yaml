@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: saitest
+  labels:
+    aws.conformance.vendor: saitest
+    aws.conformance.vendor-solution: saitest
+    aws.conformance.vendor-solution-version: "latest"
+
