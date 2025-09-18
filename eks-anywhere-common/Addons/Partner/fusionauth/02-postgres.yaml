@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: postgresql
-  namespace: fusionauth
+  namespace: fusionaut1h
 spec:
   interval: 10m
   timeout: 15m0s
