@@ -1,0 +1,30 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: ingress-nginx
+  namespace: saitest # Deploy the release into its own namespace
+spec:
+  interval: 5m0s # Reconcile the release every 5 minutes
+  chart:
+    spec:
+      chart: ingress-nginx
+      sourceRef:
+        kind: HelmRepository
+        name: ingress-nginx
+        namespace: flux-system
+      version: "4.7.2" # Pin to a specific version or use a SemVer range (e.g., ">=4.0.0")
+  # Create the namespace if it doesn't exist
+  install:
+    remediation:
+      retries: 3
+    createNamespace: true
+  upgrade:
+    remediation:
+      retries: 3
+  values:
+    controller:
+      # You can customize chart values here
+      service:
+        type: LoadBalancer
+
