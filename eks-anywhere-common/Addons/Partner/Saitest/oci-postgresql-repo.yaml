@@ -6,3 +6,7 @@ metadata:
 spec:
   interval: 10m
   url: oci://registry-1.docker.io/bitnamicharts
+  ref:
+    tag: latest  # It's better to specify a version instead of 'latest'
+  secretRef:
+    name: dockerhub-secret
